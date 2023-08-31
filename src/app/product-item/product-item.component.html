@@ -1,0 +1,9 @@
+<div class="card h-100">
+    <img [src]="productItem.image" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{productItem.title}}</h5>
+        <p class="card-text">{{productItem.description}}</p>
+        <p class="card-text">price: {{productItem.price | currency}}</p>
+        <button class="btn btn-success">More Details</button>
+    </div>
+</div>
