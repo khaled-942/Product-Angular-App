@@ -20,6 +20,9 @@ const routes: Routes = [
     path: 'signup', component: SignUpComponent
   },
   {
+    path: 'item/:id', component: ProductDetailsComponent
+  },
+  {
     path: '**', component: ProductItemComponent
   },
 ];

@@ -4,6 +4,6 @@
         <h5 class="card-title">{{productItem.title}}</h5>
         <p class="card-text">{{productItem.description}}</p>
         <p class="card-text">price: {{productItem.price | currency}}</p>
-        <button class="btn btn-success">More Details</button>
+        <button class="btn btn-success" (click)="showDetails()">More Details</button>
     </div>
 </div>
