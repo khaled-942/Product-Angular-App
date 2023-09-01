@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductWishlistService } from '../product-wishlist.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  wishCounter: number | any;
+  constructor(private productCounterSer: ProductWishlistService) { }
 
   ngOnInit(): void {
+    this.productCounterSer.productWishObserv.subscribe((value) => (this.wishCounter = value))
   }
 
 }

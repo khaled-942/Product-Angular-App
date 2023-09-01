@@ -9,12 +9,12 @@ export class ProductItemComponent implements OnInit {
   @Input() productItem: any;
   @Output() sendItem = new EventEmitter()
   firstName: string = "khaled"
-  constructor() {}
+  wishCounter: number | any
+  constructor() { }
 
-  showDetails(){
-    console.log('from child',this.productItem);
-    this.sendItem.emit(this.productItem)
-  }
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  showDetails() {
+    // console.log('from child', this.productItem);
+    this.sendItem.emit(this.productItem);
   }
 }
