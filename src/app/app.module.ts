@@ -14,6 +14,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { CurrencyPipe } from './currency.pipe';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CurrencyPipe } from './currency.pipe';
     ProductDetailsComponent,
     LogInComponent,
     SignUpComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    CartComponent
   ],
   imports: [
     BrowserModule,

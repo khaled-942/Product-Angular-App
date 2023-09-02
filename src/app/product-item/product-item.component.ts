@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -9,12 +10,20 @@ export class ProductItemComponent implements OnInit {
   @Input() productItem: any;
   @Output() sendItem = new EventEmitter()
   firstName: string = "khaled"
-  wishCounter: number | any
-  constructor() { }
+  quantityCount: number | any
 
-  ngOnInit(): void {}
+  constructor(private ProductQuantitytService : CartService) { }
+
+  ngOnInit(): void {
+    this.ProductQuantitytService.productQuantityObserv.subscribe(data=>{
+      this.quantityCount = data
+    })
+  }
   showDetails() {
     // console.log('from child', this.productItem);
     this.sendItem.emit(this.productItem);
+  }
+  quantity(){
+    this.ProductQuantitytService.updateQuantity(++this.quantityCount)
   }
 }
