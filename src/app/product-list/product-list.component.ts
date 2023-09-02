@@ -12,18 +12,14 @@ import { UsersService } from '../users.service';
 export class ProductListComponent implements OnInit {
   // @ViewChild(ProductItemComponent) child1: any
   productList:any
-  withCounter: number | any
-
   constructor(private route: Router, private productCounterService: ProductWishlistService,private productsServiece:UsersService ) { }
 
   reciveItemDate(productItem: any) {
     console.log('from Parent', productItem);
     this.route.navigate([`item/${productItem.id}`])
-    this.productCounterService.updateCounter(++this.withCounter)
   }
   ngOnInit(): void {
     this.productsServiece.getProductsList().subscribe((products) => (this.productList = products));
-    this.productCounterService.productWishObserv.subscribe((value) => (this.withCounter = value))
   }
   ngAfterViewInit() {
     // console.log('by view child', this.child1.firstName)

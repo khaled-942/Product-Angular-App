@@ -5,6 +5,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'signup', component: SignUpComponent
+  },
+  {
+    path: 'cart', component: CartComponent
   },
   {
     path: 'item/:id', component: ProductDetailsComponent
