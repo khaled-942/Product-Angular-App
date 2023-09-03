@@ -11,11 +11,11 @@ export class CartService {
   productQuantityObserv = this.productQuantity.asObservable();
 
   constructor() {}
-
   addtoCart(product: any) {
     this.checkItem = this.cartItemlist.findIndex(
       (obj: any) => obj.id == product.id
     );
+    // to add quantity and total in the api
     product = {
       quantity: 1,
       total: product.price,
