@@ -11,31 +11,29 @@ export class CartService {
   productQuantityObserv = this.productQuantity.asObservable();
 
   constructor() {}
-  
+
   addtoCart(product: any) {
     this.checkItem = this.cartItemlist.findIndex(
       (obj: any) => obj.id == product.id
     );
+    product = {
+      quantity: 1,
+      total: product.price,
+      ...product
+    };
     if (this.checkItem == -1) {
       this.cartItemlist.push(product);
-      setTimeout(() => {
-        this.addtoCart(product)
-        this.cartItemlist[this.checkItem]["quantity"] = 1;
-        this.cartItemlist[this.checkItem]["total"] =
-        this.cartItemlist[this.checkItem]["quantity"] *
-        this.cartItemlist[this.checkItem]["price"];
-      }, 1);
     } else {
-      this.cartItemlist[this.checkItem]["quantity"] +=  1;
-      this.cartItemlist[this.checkItem]["total"] =
-      this.cartItemlist[this.checkItem]["quantity"] *
-      this.cartItemlist[this.checkItem]["price"];
+      this.cartItemlist[this.checkItem].quantity += 1;
+      this.cartItemlist[this.checkItem].total =
+        this.cartItemlist[this.checkItem].quantity *
+        this.cartItemlist[this.checkItem].price;
       // console.log(this.cartItemlist);
     }
 
     this.productQuantity.next(this.cartItemlist);
     this.getTotalPrice();
-    // console.log('productQuantity', this.cartItemlist);
+    console.log('productQuantity', this.cartItemlist);
   }
 
   getTotalPrice(): number {
