@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CartService } from '../cart.service';
-import { ProductWishlistService } from '../product-wishlist.service';
+import { CartService } from 'src/app/cart.service';
+import { ProductWishlistService } from 'src/app/product-wishlist.service';
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.scss'],
+  selector: 'app-products-item',
+  templateUrl: './products-item.component.html',
+  styleUrls: ['./products-item.component.scss']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductsItemComponent implements OnInit {
+
   @Input() productItem: any;
   @Output() sendItem = new EventEmitter();
   firstName: string = 'khaled';
@@ -35,4 +36,5 @@ export class ProductItemComponent implements OnInit {
   addToCart(item:any) {
     this.cartService.addtoCart(item)
   }
+
 }

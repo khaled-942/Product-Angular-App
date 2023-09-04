@@ -1,7 +1,7 @@
 <div class="container p-5">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" *ngFor="let item of productList">
-            <app-product-item [productItem]="item" (sendItem)="reciveItemDate($event)"></app-product-item>
+            <app-products-item [productItem]="item" (sendItem)="reciveItemDate($event)"></app-products-item>
         </div>
     </div>
 </div>
