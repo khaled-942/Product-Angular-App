@@ -32,7 +32,8 @@ const routes: Routes = [
   {
     path: 'store',
     // component:ProductsListComponent
-    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
   },
   // {
   //   path: 'item/:id',
@@ -45,7 +46,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
