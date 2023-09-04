@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { LogInComponent } from './log-in/log-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthDGuard } from './auth-d.guard';
+import { LoginComponent } from './auth-module/login/login.component';
+import { SignUpComponent } from './auth-module/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'details', component: ProductDetailsComponent
   },
   {
-    path: 'login', component: LogInComponent
+    path: 'login', component: LoginComponent
   },
   {
     path: 'signup', component: SignUpComponent

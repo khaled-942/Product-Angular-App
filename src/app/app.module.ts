@@ -10,12 +10,12 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { LogInComponent } from './log-in/log-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { CurrencyPipe } from './currency.pipe';
 import { CartComponent } from './cart/cart.component';
 import { RequestInterceptor } from './request.interceptor';
+import { LoaderComponent } from './loader/loader.component';
+import { AuthModuleModule } from './auth-module/auth-module.module';
 
 @NgModule({
   declarations: [
@@ -25,10 +25,9 @@ import { RequestInterceptor } from './request.interceptor';
     ProductListComponent,
     ProductItemComponent,
     ProductDetailsComponent,
-    LogInComponent,
-    SignUpComponent,
     CurrencyPipe,
-    CartComponent
+    CartComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +35,7 @@ import { RequestInterceptor } from './request.interceptor';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AuthModuleModule
   ],
   providers: [
     {
