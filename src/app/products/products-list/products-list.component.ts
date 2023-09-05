@@ -15,7 +15,7 @@ constructor(private route: Router,private productsServiece:UsersService ) { }
 
 reciveItemDate(productItem: any) {
   console.log('from Parent', productItem);
-  this.route.navigate([`item/${productItem.id}`])
+  this.route.navigate([`store/item/${productItem.id}`])
 }
 ngOnInit(): void {
   this.productsServiece.getProductsList().subscribe((products) => (this.productList = products));
