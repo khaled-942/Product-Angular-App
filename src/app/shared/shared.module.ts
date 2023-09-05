@@ -5,11 +5,13 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyPipe } from '../currency.pipe';
+import { HighlightDirective } from '../highlight.directive';
 
 
 @NgModule({
   declarations: [
     CurrencyPipe,
+    HighlightDirective,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { CurrencyPipe } from '../currency.pipe';
     FormsModule,
     ReactiveFormsModule,
     CurrencyPipe,
+    HighlightDirective
   ]
 })
 export class SharedModule { }

@@ -8,6 +8,7 @@ import { ProductWishlistService } from 'src/app/product-wishlist.service';
   styleUrls: ['./products-item.component.scss']
 })
 export class ProductsItemComponent implements OnInit {
+  color = 'red';
 
   @Input() productItem: any;
   @Output() sendItem = new EventEmitter();
